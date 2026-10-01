@@ -14,6 +14,10 @@ provider "azurerm" {
 resource "azurerm_resource_group" "main" {
   name = "rg-network-project"
   location = var.location
+  tags = {
+    environment = "dev"
+    project     = "azure-network-project"
+  }
 }
 resource "azurerm_virtual_network" "main" {
   name = "Project_vnet"
